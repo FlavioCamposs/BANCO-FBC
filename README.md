@@ -1,6 +1,6 @@
 # BANCO FBC - Sistema de Saque Automático
 
-BANCO FBC (abreviação dos meus 3 primeiros nomes)
+BANCO FBC - abreviação dos meus 3 primeiros nomes
 
 Este é um programa simples em Python que simula um caixa eletrônico para saques. Ele exibe as cédulas disponíveis para saque, pergunta ao usuário se ele deseja visualizar essas cédulas e, em seguida, solicita o valor desejado para saque. O programa calcula as cédulas necessárias para fornecer o valor desejado e exibe a quantidade de cada cédula.
 
