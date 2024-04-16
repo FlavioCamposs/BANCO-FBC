@@ -1,23 +1,54 @@
-print('=' * 30)
-print('{:^30}'.format('BEM VINDO AO BANCO FBC!'))
-print('=' * 30)
+def linha(frase):
+    tam = len(frase) + 4
+    print('=' * tam)
+    print(f'  \033[1;97m{frase}\033[m')
+    print('=' * tam)
+
+
+#LISTA DAS CORES
+c = ['\033[m',          # 0 - sem cores
+     '\033[1;91m',      # 1 - vermelho
+     '\033[1;92m',      # 2 - verde
+     '\033[1;93m',      # 3 - amarelo
+     '\033[1;94m',      # 4 - azul
+     '\033[1;97m',      # 5 - Branco
+]
+
+
+def titulo(tit, cor=0):
+    tam = len(tit) + 4
+    print(c[cor], end='')
+    print('=' * tam)
+    print(f'  {tit}')
+    print('=' * tam)
+    print(c[0], end='')
+
+
+titulo('BEM VINDO AO BANCO FBC!', 2)
+
 
 #Saber se o usuário deseja ou não ver as cedulas que estão disponiveis para saque
-while True:
-    cedulas = str(input('Deseja ver as cedulas disponiveis? [S/N]: ')).upper()[0]
-    if cedulas == 'S':
-        print('=' * 30)
-        print('Cédulas disponiveis: 100, 50, 20, 10, 5, 1')
-        print('=' * 30)
-        break
-    elif cedulas == 'N':
-        break
-    else:
-        print('Dado invalido! digite apenas S ou N')
+def comandoInicial():
+    while True:
+        cedulas = str(input('\033[1;97mDeseja ver as cedulas disponiveis? [S/N]: \033[m')).upper()[0]
+        if cedulas == 'S':
+            linha('Cédulas disponiveis: 100, 50, 20, 10, 5, 1')
+            break
+        elif cedulas == 'N':
+            break
+        else:
+            print('Dado invalido! digite apenas S ou N')
 
 
-valor = int(input('Qual o valor a ser sacado?: '))
-montante = valor
+comandoInicial()
+
+
+def comandoDeEntrada():
+    return int(input(f'\033[1;97mQual o valor a ser sacado?: \033[m'))
+
+
+montante = comandoDeEntrada()
+print('=' * 46)
 
 #VERIFICAR QUANTAS VEZES EU CONSIGO TIRAR 50 DO VALOR DIGITADO (Se possivel)
 cedulaAtual = 100
@@ -30,7 +61,7 @@ while True:
     else:
         if totalCedula > 0:
             #Ir mostrando quantas cedulas precisa para completar o valor total do saque
-            print(f'Total de {totalCedula} cédulas de R${cedulaAtual}')
+            print(f'\033[1;97mTotal de {totalCedula} cédulas de\033[m \033[1;94mR${cedulaAtual}\033[m')
 
         '''
         Verificar se:
@@ -53,6 +84,4 @@ while True:
             break
 
 #Imprimir uma mensagem de despedida
-print('=' * 48)
-print('{:^48}'.format('Muito Obrigado! Volte sempre ao BANCO FBC!'))
-print('=' * 48)
+titulo('Muito Obrigado! Volte sempre ao BANCO FBC!', 1)
