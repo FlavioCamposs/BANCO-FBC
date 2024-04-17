@@ -11,6 +11,6 @@ Este é um programa simples em Python que simula um caixa eletrônico para saque
 
 ## Exemplo de Uso
 
-![Texto Alternativo](https://i.imgur.com/fozf0FY.png)
+![...](https://i.imgur.com/fozf0FY.png)
 
 Lembre-se de que este é apenas um exemplo básico e pode ser ajustado conforme necessário. Este programa é interativo e permite ao usuário realizar saques com base nas cédulas disponíveis.
